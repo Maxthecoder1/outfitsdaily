@@ -109,7 +109,7 @@ def windex(): # query=None,gender='nonbinary'):
     error = None
     data = None
     if request.method == 'GET':
-        a = getweather(remoteaddr='64.233.161.99', gender='nonbinary') #request.remote_addr
+        a = getweather(remoteaddr=request.remote_addr, gender='nonbinary') #request.remote_addr
         if type(a) == 'str' and 'Error' in a:
             error = a
         return render_template('windex.html', data=a, error=error)
@@ -194,5 +194,6 @@ def internal_error(e):
 
 # Launch server
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='localhost', port=port, threaded=True)
+    #port = int(os.environ.get("PORT", 5000))
+    #app.run(host='localhost', port=port, threaded=True)
+    app.run(threaded=True)
