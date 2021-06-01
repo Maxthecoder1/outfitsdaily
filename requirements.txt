@@ -38,7 +38,7 @@ service-identity==17.0.0
 six==1.11.0
 SQLAlchemy==1.1.14
 tornado==4.5.2
-urllib3==1.21.1
+urllib3==1.26.5
 useragent==0.1.1
 virtualenv==15.1.0
 virtualenvwrapper-win==1.2.4
